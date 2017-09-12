@@ -43,6 +43,7 @@ public class MainActivity extends Activity {
     public String from = "0";
     public String to = "0";
     public String text = "0";
+    public String manifest = "";
     public String datetime = "0";
     public JSONObject count_message;
     public JSONObject messages;
@@ -52,6 +53,11 @@ public class MainActivity extends Activity {
     public TextView incorrect_not_found;
     public EditText message;
     public Button btn_send;
+
+    public LinearLayout ManifestToggle;
+    public TextView ManifestText;
+    public TextView ManifestLabel;
+    public Boolean ManifestLock = true;
 
     public ArrayList<incorrect_const> incorrects = new ArrayList<incorrect_const>();
     public incorrect_box boxAdapter;
@@ -76,10 +82,14 @@ public class MainActivity extends Activity {
         Intent intent = getIntent();
         SID = intent.getStringExtra("uid");
         USERIAL = intent.getStringExtra("serial");
+        USERIAL = (USERIAL.length()>40) ? USERIAL.substring(0,40)+"..." : USERIAL;
 
         final LinearLayout nointernet = (LinearLayout) findViewById(R.id.nointernet);
         final TextView serial_text = (TextView) findViewById(R.id.serial);
         btn_send = (Button) findViewById(R.id.btn_send);
+        ManifestToggle = (LinearLayout) findViewById(R.id.manifest_toggle);
+        ManifestText = (TextView) findViewById(R.id.manifest_text);
+        ManifestLabel = (TextView) findViewById(R.id.manifest_label);
 
         serial_text.setText((USERIAL.equals("for_all"))?"Обращение ко всем...":USERIAL); //Вывод сериала
 
@@ -154,6 +164,22 @@ public class MainActivity extends Activity {
                             "text=" + text);
                 }
 
+            }
+        });
+
+
+        ManifestToggle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                int _scalable = 299;
+
+                if(!ManifestLock) {
+                    if (ManifestToggle.getY() < 0)
+                        ManifestToggle.animate().yBy(_scalable);
+                    else
+                        ManifestToggle.animate().yBy(-_scalable);
+                }
             }
         });
 
@@ -268,10 +294,18 @@ public class MainActivity extends Activity {
                     from = messages.get("from") + "";
                     to = messages.get("to") + "";
                     text = messages.get("message") + "";
+                    manifest = messages.get("manifest") + "";
                     datetime = messages.get("datetime") + "";
 
                     incorrects.add(new incorrect_const(text, datetime, from));
 
+                }
+
+                if(manifest.length()>10) {
+                    ManifestToggle.animate().yBy(100);
+                    ManifestLock = false;
+                    ManifestText.setText(manifest);
+                    ManifestLabel.setText("Манифест собран");
                 }
 
                 boxAdapter = new incorrect_box(context, incorrects);
