@@ -8,6 +8,7 @@ import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -73,6 +74,8 @@ public class ListActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
+
+        context.startService(new Intent(context, GetMessage.class));
 
         final LinearLayout nointernet = (LinearLayout) findViewById(R.id.nointernet);
         final Button refresh = (Button) findViewById(R.id.refresh);

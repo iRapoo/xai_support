@@ -42,7 +42,7 @@
     <string name="incorrect_send">Послать обращение</string>
     <string name="incoorect_not_found">История обращений пуста</string>
 
-    <string name="inc_notific_title">Получен ответ от на ваше обращение</string>
+    <string name="inc_notific_title">Получено новое обращение от пользователя</string>
     <string name="inc_notific_text">Нажмите чтобы прочитать</string>
 
     <string name="attention">Внимание!!!</string>
