@@ -224,10 +224,15 @@ public class MainActivity extends Activity {
         protected void onPostExecute(String res) {
             super.onPostExecute(res);
 
-            if(res.equals("true"))
+            if(res.equals("true")) {
                 new GetIncorrect().execute("get_incorrect.php",
                         "uid=" + SID);
 
+                int _countincorrect = Integer.parseInt(Storage.loadData(context,"incorrectCount2"));
+
+                Storage.saveData(context,"incorrectCount2",(_countincorrect+1)+"");
+
+            }
         }
 
     }

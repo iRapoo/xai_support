@@ -193,13 +193,13 @@ public class GetMessage extends Service {
                     messages = (JSONObject) jsonObj.get("message" + (_count-1));
                     from = messages.get("from") + "";
 
-                    if(!(_count+"").equals(Storage.loadData(getApplicationContext(),"incorrectCount"))){
+                    if(!(_count+"").equals(Storage.loadData(getApplicationContext(),"incorrectCount2"))){
 
-                        int save_count = (Storage.emptyData(getApplicationContext(),"incorrectCount")) ? 0 : Integer.parseInt(Storage.loadData(getApplicationContext(),"incorrectCount"));
+                        int save_count = (Storage.emptyData(getApplicationContext(),"incorrectCount2")) ? 0 : Integer.parseInt(Storage.loadData(getApplicationContext(),"incorrectCount2"));
                         int nol = (save_count>-1) ? (_count - save_count) : 0;
                         //int _nol = (nol<0) ? 0 : nol;
 
-                        Storage.saveData(getApplicationContext(),"incorrectCount",_count+"");
+                        Storage.saveData(getApplicationContext(),"incorrectCount2",_count+"");
 
                         if(nol>0) {
 
