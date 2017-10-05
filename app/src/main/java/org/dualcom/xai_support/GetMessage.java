@@ -29,7 +29,7 @@ public class GetMessage extends Service {
 
     // ИМЯ СЕРВЕРА (url зарегистрированного нами сайта)
     // например http://l29340eb.bget.ru
-    String server_name = "http://rapoo.mysit.ru/android/";
+    String server_name = "http://rapoo.mysit.ru/api?module=";
 
     public String UID = "";
     public String from = "0";
@@ -126,7 +126,7 @@ public class GetMessage extends Service {
 
                     cursor.close();*/
 
-                    lnk = server_name + "get_incorrect.php?uid=admin";
+                    lnk = server_name + "get_incorrect&uid=admin";
 
                     // создаем соединение ---------------------------------->
                     try {

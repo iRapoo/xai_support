@@ -83,7 +83,7 @@ public class ListActivity extends Activity {
         load_list = (LinearLayout) findViewById(R.id.load_list);
 
         if(isNetworkAvailable())
-            new GetIncorrect().execute("get_list_incorrect.php", "uid=" + UID);
+            new GetIncorrect().execute("get_list_incorrect", "uid=" + UID);
         else
             nointernet.setVisibility(nointernet.VISIBLE);
 
@@ -91,7 +91,7 @@ public class ListActivity extends Activity {
             @Override
             public void onClick(View view) {
                 load_list.setVisibility(load_list.VISIBLE);
-                new GetIncorrect().execute("get_list_incorrect.php", "uid=" + UID);
+                new GetIncorrect().execute("get_list_incorrect", "uid=" + UID);
             }
         });
 
@@ -102,7 +102,7 @@ public class ListActivity extends Activity {
         @SuppressWarnings("WrongThread")
         @Override
         protected String doInBackground(String... params) {
-            String HOST = "http://rapoo.mysit.ru/android/";
+            String HOST = "http://rapoo.mysit.ru/api?module=";
 
             try{
                 DefaultHttpClient hc = new DefaultHttpClient();

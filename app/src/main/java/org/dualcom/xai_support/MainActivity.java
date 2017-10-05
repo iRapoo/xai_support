@@ -103,7 +103,7 @@ public class MainActivity extends Activity {
         //************************
 
         if(isNetworkAvailable())
-            new GetIncorrect().execute("get_incorrect.php", "uid=" + SID);
+            new GetIncorrect().execute("get_incorrect", "uid=" + SID);
         else
             nointernet.setVisibility(nointernet.VISIBLE);
 
@@ -137,7 +137,7 @@ public class MainActivity extends Activity {
                         message.setEnabled(false);
                         btn_send.setEnabled(false);
 
-                        new SandIncorrect().execute("incorrectSend.php",
+                        new SandIncorrect().execute("incorrectSend",
                                 "uid=" + UID,
                                 "sid=" + SID,
                                 "text=" + text);
@@ -158,7 +158,7 @@ public class MainActivity extends Activity {
                     message.setEnabled(false);
                     btn_send.setEnabled(false);
 
-                    new SandIncorrect().execute("incorrectSend.php",
+                    new SandIncorrect().execute("incorrectSend",
                             "uid=" + UID,
                             "sid=" + SID,
                             "text=" + text);
@@ -193,7 +193,7 @@ public class MainActivity extends Activity {
 
         @Override
         protected String doInBackground(String... params) {
-            String HOST = "http://rapoo.mysit.ru/android/";
+            String HOST = "http://rapoo.mysit.ru/api?module=";
 
             try{
                 DefaultHttpClient hc = new DefaultHttpClient();
@@ -225,7 +225,7 @@ public class MainActivity extends Activity {
             super.onPostExecute(res);
 
             if(res.equals("true")) {
-                new GetIncorrect().execute("get_incorrect.php",
+                new GetIncorrect().execute("get_incorrect",
                         "uid=" + SID);
 
                 int _countincorrect = Integer.parseInt(Storage.loadData(context,"incorrectCount2"));
@@ -242,7 +242,7 @@ public class MainActivity extends Activity {
         @SuppressWarnings("WrongThread")
         @Override
         protected String doInBackground(String... params) {
-            String HOST = "http://rapoo.mysit.ru/android/";
+            String HOST = "http://rapoo.mysit.ru/api?module=";
 
             try{
                 DefaultHttpClient hc = new DefaultHttpClient();
