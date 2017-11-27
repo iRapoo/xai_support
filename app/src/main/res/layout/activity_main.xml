@@ -27,10 +27,10 @@
                 android:layout_height="50dp">
 
                 <Button
+                    android:id="@+id/GO_BACK"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:id="@+id/GO_BACK"
-                    android:background="@drawable/btn_panel" />
+                    android:background="@drawable/selector" />
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -179,8 +179,8 @@
                 android:layout_height="match_parent"
                 android:layout_alignBaseline="@+id/incorrect_not_found"
                 android:layout_alignParentTop="false"
-                android:orientation="horizontal"
-                android:paddingTop="50dp">
+                android:layout_marginBottom="15dp"
+                android:orientation="horizontal">
 
                 <ListView
                     android:id="@+id/list_incorrect"
@@ -196,7 +196,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="75dp"
                 android:layout_alignParentBottom="true"
                 android:layout_marginBottom="-10dp"
                 android:layout_marginLeft="-10dp"
@@ -214,18 +214,33 @@
                     android:ems="10"
                     android:hint="@string/incorrect_hint"
                     android:imeOptions="actionDone"
-                    android:inputType="textCapSentences|textAutoCorrect|textAutoComplete"
+                    android:inputType="textMultiLine|textCapSentences|textAutoCorrect|textAutoComplete"
                     android:paddingLeft="5dp"
                     android:textColor="#000"
                     android:textColorLink="@color/main_color" />
 
-                <Button
-                    android:id="@+id/btn_send"
-                    android:layout_width="250dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="-5dp"
-                    android:layout_weight="1"
-                    android:text="@string/send" />
+                <RelativeLayout
+                    android:layout_width="65dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical|center_horizontal">
+
+                    <Button
+                        android:id="@+id/btn_send"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="-5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/selector" />
+
+                    <ImageView
+                        android:id="@+id/imageView13"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/incorrect_send" />
+
+                </RelativeLayout>
 
             </LinearLayout>
 

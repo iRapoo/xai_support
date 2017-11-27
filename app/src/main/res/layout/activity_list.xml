@@ -48,10 +48,10 @@
             android:padding="10dp">
 
             <Button
+                android:id="@+id/refresh"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:id="@+id/refresh"
-                android:background="@drawable/btn_panel" />
+                android:background="@drawable/selector" />
 
             <ImageView
                 android:layout_width="wrap_content"
