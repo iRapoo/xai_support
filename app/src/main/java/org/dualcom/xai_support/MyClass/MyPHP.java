@@ -26,28 +26,13 @@ import java.util.List;
 public class MyPHP extends AsyncTask<String, Integer, String> {
 
     Context context;
-   /* private ProgressBar progressBar;
-    int progress_status;
 
 
-    public MyPHP(ProgressBar pb) {
-        progressBar = pb;
-    }
-
-    @Override
-    protected void onPreExecute() {
-        // обновляем пользовательский интерфейс сразу после выполнения задачи
-        super.onPreExecute();
-
-        progressBar.setVisibility(View.VISIBLE);
-    }*/
-
-    public static String HOST = "http://rapoo.mysit.ru/api?module=";
     @Override
     protected String doInBackground(String... params) {
         try{
             DefaultHttpClient hc = new DefaultHttpClient();
-            HttpPost postMethod = new HttpPost(HOST+params[0]);
+            HttpPost postMethod = new HttpPost(isInternet.API + params[0]);
             List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(2);
 
             int count = params.length;

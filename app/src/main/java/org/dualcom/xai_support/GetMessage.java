@@ -7,6 +7,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 import org.dualcom.xai_support.MyClass.Storage;
+import org.dualcom.xai_support.MyClass.isInternet;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -29,7 +30,7 @@ public class GetMessage extends Service {
 
     // ИМЯ СЕРВЕРА (url зарегистрированного нами сайта)
     // например http://l29340eb.bget.ru
-    String server_name = "http://rapoo.mysit.ru/api?module=";
+    String server_name = isInternet.API;
 
     public String UID = "";
     public String from = "0";

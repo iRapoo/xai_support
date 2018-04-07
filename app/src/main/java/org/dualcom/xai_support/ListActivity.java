@@ -28,6 +28,7 @@ import org.apache.http.protocol.HTTP;
 import org.apache.http.util.EntityUtils;
 import org.dualcom.xai_support.MyClass.Storage;
 import org.dualcom.xai_support.MyClass.Windows;
+import org.dualcom.xai_support.MyClass.isInternet;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -102,7 +103,7 @@ public class ListActivity extends Activity {
         @SuppressWarnings("WrongThread")
         @Override
         protected String doInBackground(String... params) {
-            String HOST = "http://rapoo.mysit.ru/api?module=";
+            String HOST = isInternet.API;
 
             try{
                 DefaultHttpClient hc = new DefaultHttpClient();

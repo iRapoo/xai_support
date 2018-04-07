@@ -2,14 +2,14 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 27
-    buildToolsVersion "27.0.2"
+    buildToolsVersion "27.0.3"
 
     defaultConfig {
         applicationId "org.dualcom.xai_support"
         minSdkVersion 15
         targetSdkVersion 27
-        versionCode 5
-        versionName "0.5a"
+        versionCode 7
+        versionName "0.7a"
     }
     buildTypes {
         release {
@@ -21,8 +21,8 @@ android {
 }
 
 ext {
-    ApiBuildVersion = '27.0.2'
-    playServicesVersion = '11.8.0'
+    ApiBuildVersion = '27.1.0'
+    playServicesVersion = '12.0.1'
 }
 
 dependencies {

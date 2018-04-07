@@ -193,7 +193,7 @@ public class MainActivity extends Activity {
 
         @Override
         protected String doInBackground(String... params) {
-            String HOST = "http://rapoo.mysit.ru/api?module=";
+            String HOST = isInternet.API;
 
             try{
                 DefaultHttpClient hc = new DefaultHttpClient();
@@ -242,7 +242,7 @@ public class MainActivity extends Activity {
         @SuppressWarnings("WrongThread")
         @Override
         protected String doInBackground(String... params) {
-            String HOST = "http://rapoo.mysit.ru/api?module=";
+            String HOST = isInternet.API;
 
             try{
                 DefaultHttpClient hc = new DefaultHttpClient();
