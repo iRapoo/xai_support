@@ -1,15 +1,15 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 27
-    buildToolsVersion "27.0.3"
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
 
     defaultConfig {
         applicationId "org.dualcom.xai_support"
-        minSdkVersion 15
-        targetSdkVersion 27
-        versionCode 7
-        versionName "0.7a"
+        minSdkVersion 20
+        targetSdkVersion 28
+        versionCode 8
+        versionName "0.8a"
     }
     buildTypes {
         release {
@@ -21,23 +21,23 @@ android {
 }
 
 ext {
-    ApiBuildVersion = '27.1.0'
-    playServicesVersion = '12.0.1'
+    ApiBuildVersion = '28.0.0'
+    playServicesVersion = '16.0.0'
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile files('libs/android-query-full.0.26.8.jar')
-    compile files('libs/android-async-http-1.4.9.jar')
-    compile 'net.opacapp:multiline-collapsingtoolbar:1.6.0'
-    compile 'com.github.amlcurran.showcaseview:library:5.4.3'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation files('libs/android-query-full.0.26.8.jar')
+    implementation files('libs/android-async-http-1.4.9.jar')
+    implementation 'net.opacapp:multiline-collapsingtoolbar:1.6.0'
+    implementation 'com.github.amlcurran.showcaseview:library:5.4.3'
 
-    implementation "com.google.firebase:firebase-ads:${playServicesVersion}"
+    //implementation "com.google.firebase:firebase-ads:${playServicesVersion}"
 
     implementation "com.android.support:appcompat-v7:${ApiBuildVersion}"
     implementation "com.android.support:support-v4:${ApiBuildVersion}"
     implementation "com.android.support:design:${ApiBuildVersion}"
     implementation "com.android.support:cardview-v7:${ApiBuildVersion}"
     implementation "com.android.support:recyclerview-v7:${ApiBuildVersion}"
-    compile files('libs/json-simple-1.1.1.jar')
+    implementation files('libs/json-simple-1.1.1.jar')
 }
